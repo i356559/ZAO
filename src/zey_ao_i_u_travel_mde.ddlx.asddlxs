@@ -1,0 +1,91 @@
+@Metadata.layer: #CORE
+@UI.headerInfo:{ 
+    typeName: 'Travel',
+    typeNamePlural: 'Travel',
+    description: {value: 'TotalPrice' },
+    title: {value: 'Description' }
+}
+@UI.presentationVariant: [{ sortOrder: [{ by: 'AgencyId', direction: #DESC }] }]
+@Search.searchable: true
+annotate view ZEY_AO_I_U_TRAVEL
+    with 
+{   
+    @UI.facet: [{
+                    label: 'General Information',
+                    position: 10,
+                    id: 'GeneralInfo',
+                    type: #COLLECTION
+     },{
+                    id: 'Travel',
+                    purpose: #STANDARD,
+                    type: #IDENTIFICATION_REFERENCE,
+                    label: 'Travel Details',
+                    position: 10,
+                    parentId: 'GeneralInfo'
+     },{ 
+        purpose: #HEADER,
+        type: #DATAPOINT_REFERENCE,
+        position: 10,
+        targetQualifier: 'StatusData'
+     },{ 
+        purpose: #STANDARD,
+        type: #FIELDGROUP_REFERENCE,
+        label: 'Pricing Data',
+        parentId: 'GeneralInfo',
+        position: 20,
+        targetQualifier: 'PricingData'
+     },{ 
+        purpose: #STANDARD,
+        type: #FIELDGROUP_REFERENCE,
+        label: 'Dates',
+        parentId: 'GeneralInfo',
+        position: 30,
+        targetQualifier: 'DatesData'
+     }]
+    @UI.selectionField: [{position: 10 }]
+    @UI.lineItem: [{position: 10, label: 'Travel ID' }]
+    @UI.identification: [{position: 10 }]
+    @Search.defaultSearchElement: true
+    TravelId;
+    @UI.selectionField: [{position: 20 }]
+    @UI.lineItem: [{position: 20, label: 'Agency ID' }]
+    @UI.identification: [{position: 20 }]
+    @Consumption.valueHelpDefinition: [{ entity: { name: 'ZEY_AO_U_AGENCY', element: 'AgencyId' } }]
+    @Search.defaultSearchElement: true
+    AgencyId;
+    @UI.selectionField: [{position: 30 }]
+    @UI.lineItem: [{position: 30, label: 'Customer ID' }]
+    @UI.identification: [{position: 30 }]
+    @Consumption.valueHelpDefinition: [{ entity: { name: 'ZEY_AO_U_CUSTOMER', element: 'CustomerId' } }]
+    @Search.defaultSearchElement: true
+    CustomerId;
+    @UI.lineItem: [{position: 40 }]
+    @UI.fieldGroup: [{qualifier: 'DatesData', position: 10 }]
+    BeginDate;
+    @UI.fieldGroup: [{qualifier: 'DatesData', position: 20 }]
+    EndDate;
+    @UI.fieldGroup: [{qualifier: 'PricingData', position: 20 }]
+    BookingFee;
+    @UI.lineItem: [{position: 50 }]
+    @UI.fieldGroup: [{qualifier: 'PricingData', position: 10 }]
+    TotalPrice;
+    @UI.lineItem: [{position: 60 }]
+    @UI.fieldGroup: [{qualifier: 'PricingData', position: 30 }]
+    CurrencyCode;
+//    @UI.lineItem: [{position: 70 }]
+    @UI.identification: [{position: 70 }]
+    Description;
+    @UI.textArrangement: #TEXT_ONLY
+    @UI.lineItem: [{position: 80,
+        criticality: 'Criticality', criticalityRepresentation: #WITH_ICON,
+                                                              importance: #HIGH },
+     {  type: #FOR_ACTION, dataAction: 'set_status_booked', label: 'Book Maddi' }]
+    @UI.identification: [{position: 80 }]
+    @UI.dataPoint: { qualifier: 'StatusData' , title: 'Status', criticality: 'Criticality' }
+    Status;
+//    Createdby;
+//    Createdat;
+//    Lastchangedby;
+//    Lastchangedat;
+    
+}

@@ -1,0 +1,26 @@
+projection;
+strict ( 2 );
+//use draft;
+
+define behavior for ZEY_AO_I_M_TRAVEL_APPROVER alias Travel
+{
+  field(readonly) TravelId, BeginDate, EndDate, CustomerId, TotalPrice;
+  //use create;
+  use update;
+  //use delete;
+
+  ///use action createTravelByTemplate;
+  use action acceptTravel;
+  use action rejectTravel;
+
+
+  //use association _Bookings { create; with draft; }
+}
+
+//define behavior for ZEY_AO_I_M_BOOKING_APPROVER //alias <alias_name>
+//{
+//  use update;
+//  use delete;
+//
+//  use association _Travel { with draft; }
+//}

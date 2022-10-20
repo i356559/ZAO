@@ -1,0 +1,5 @@
+CLASS zey_ao_trv_proc DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zey_ao_i_m_travel_processor.
+ENDCLASS.
+
+CLASS zey_ao_trv_proc IMPLEMENTATION.
+ENDCLASS.

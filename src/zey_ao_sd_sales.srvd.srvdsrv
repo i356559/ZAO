@@ -1,0 +1,6 @@
+@EndUserText.label: 'Sales Service Definition'
+define service ZEY_AO_SD_SALES {
+  expose ZEY_AO_CO_SALES as SalesDataSet;
+  expose zey_ao_i_product as Products;
+  expose zey_ao_co_salesorder as SalesOrderHeader;
+}

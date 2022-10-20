@@ -1,0 +1,5 @@
+CLASS zbp_ey_ao_i_m_travel DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zey_ao_i_m_travel.
+ENDCLASS.
+
+CLASS zbp_ey_ao_i_m_travel IMPLEMENTATION.
+ENDCLASS.

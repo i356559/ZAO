@@ -1,0 +1,30 @@
+unmanaged implementation in class zbp_ey_ao_i_u_travel unique;
+strict ( 2 );
+
+define behavior for ZEY_AO_I_U_TRAVEL alias Travel
+lock master
+authorization master ( global )
+etag master Lastchangedat
+{
+  create;
+  update;
+  delete;
+
+  action set_status_booked result[1] $self;
+
+mapping for /dmo/travel control /dmo/s_travel_intx
+{
+    AgencyId = agency_id;
+    BeginDate = begin_date;
+    BookingFee = booking_fee;
+    CurrencyCode = currency_code;
+    CustomerId = customer_id;
+    EndDate = end_date;
+    Lastchangedat = lastchangedat;
+    Description = description;
+    Status = status;
+    TotalPrice = total_price;
+    TravelId = travel_id;
+}
+
+}

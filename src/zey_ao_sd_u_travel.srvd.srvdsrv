@@ -1,0 +1,9 @@
+@EndUserText.label: 'Unamanged Scenario Travel SD'
+define service ZEY_AO_SD_U_TRAVEL {
+  expose ZEY_AO_I_U_TRAVEL as Travel;
+  expose ZEY_AO_U_AGENCY as Agency;
+  expose ZEY_AO_U_CUSTOMER as Customer;
+  expose I_Currency as Currecny;
+  expose I_Country as Country;
+  expose /DMO/I_Travel_Status_VH as TravelStatus;
+}

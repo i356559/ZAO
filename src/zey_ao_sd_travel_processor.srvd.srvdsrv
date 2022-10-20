@@ -1,0 +1,10 @@
+@EndUserText.label: 'ZEY_AO_I_M_TRAVEL_PROCESSOR'
+define service ZEY_AO_SD_TRAVEL_PROCESSOR {
+  expose ZEY_AO_I_M_TRAVEL_PROCESSOR as Travel;
+  expose ZEY_AO_I_M_BOOKING_PROCESSOR as Booking;
+  expose /DMO/I_Flight as Flight;
+  expose /DMO/I_Carrier as Carrier;
+  expose ZEY_AO_U_CUSTOMER as Customer;
+  expose ZEY_AO_U_AGENCY as Agency;
+  expose /DMO/I_Connection as Connection;
+}

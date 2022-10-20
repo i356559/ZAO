@@ -1,0 +1,28 @@
+@Metadata.layer: #CUSTOMER
+annotate view ZEY_AO_I_M_BK_SUPP_APPROVER
+    with 
+{
+    @UI.facet: [{ 
+        id: 'BookingSuppl',
+        position: 10,
+        purpose: #STANDARD,
+        type: #IDENTIFICATION_REFERENCE,
+        label: 'Details'
+    }]
+    @UI.identification: [{position: 10 }]
+    @UI.lineItem: [{position: 10 }]
+    TravelId;
+    @UI.identification: [{position: 20 }]
+    @UI.lineItem: [{position: 20 }]
+    BookingId;
+    @UI.identification: [{position: 30 }]
+    @UI.lineItem: [{position: 30 }]
+    BookingSupplementId;
+    @UI.identification: [{position: 30 }]
+    @UI.lineItem: [{position: 30 }]
+    SupplementId;
+    @UI.identification: [{position: 40 }]
+    @UI.lineItem: [{position: 40 }]
+    Price;
+    
+}

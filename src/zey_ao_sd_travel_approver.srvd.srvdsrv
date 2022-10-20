@@ -1,0 +1,9 @@
+@EndUserText.label: 'travel approver service definition'
+define service ZEY_AO_SD_TRAVEL_APPROVER {
+  expose ZEY_AO_I_M_TRAVEL_APPROVER as Travel;
+  expose ZEY_AO_I_M_BOOKING_APPROVER as Bookings;
+  expose ZEY_AO_I_M_BK_SUPP_APPROVER as BookingSupplement;
+  expose ZEY_AO_U_AGENCY as Agency;
+  expose ZEY_AO_U_CUSTOMER as Customer;
+  expose I_Currency as Currency;
+}

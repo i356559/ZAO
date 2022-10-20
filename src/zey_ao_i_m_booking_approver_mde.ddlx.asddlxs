@@ -1,0 +1,43 @@
+@Metadata.layer: #CUSTOMER
+annotate view ZEY_AO_I_M_BOOKING_APPROVER
+    with 
+{
+    @UI.facet: [{
+        id: 'BookingData',
+        purpose: #STANDARD,
+        type: #IDENTIFICATION_REFERENCE,
+        label: 'Booking Data',
+        position: 10    
+     },{ 
+        id: 'BookingSupplement',
+        purpose: #STANDARD,
+        type: #LINEITEM_REFERENCE,
+        position: 20,
+        label: 'Booking Supplement',
+        targetElement: '_BookSuppl'
+     
+     }]
+    TravelId;
+    @UI: { lineItem: [{position: 10 }],
+           identification: [{position: 10 }] }
+    BookingId;
+    @UI: { lineItem: [{position: 20 }],
+           identification: [{position: 20 }] }
+    BookingDate;
+    @UI: { lineItem: [{position: 30 }],
+           identification: [{position: 30 }] }
+    CustomerId;
+    @UI: { lineItem: [{position: 40 }],
+           identification: [{position: 40 }] }
+    CarrierId;
+    @UI: { lineItem: [{position: 50 }],
+           identification: [{position: 50 }] }
+    ConnectionId;
+    @UI: { lineItem: [{position: 60 }],
+           identification: [{position: 60 }] }
+    FlightDate;
+    @UI: { lineItem: [{position: 70 }],
+           identification: [{position: 70 }] }
+    FlightPrice;
+    
+}
